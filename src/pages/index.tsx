@@ -3,27 +3,26 @@ import { GetStaticProps } from 'next'
 import { useEffect } from 'react'
 import { getSkills } from '../lib/getSkills'
 import { getInfo } from '../lib/getInfo'
-import { getPropertiesData } from '../lib/getPropertiesData'
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
+import { BasicInfo } from '../components/BasicInfo'
 
 export default function Home({
   experience,
   skills,
   info,
 }: {
-  experience: ReturnType<typeof getExperience>
-  skills: ReturnType<typeof getSkills>
-  info: ReturnType<typeof getInfo>
+  experience: Awaited<ReturnType<typeof getExperience>>
+  skills: Awaited<ReturnType<typeof getSkills>>
+  info: Awaited<ReturnType<typeof getInfo>>
 }) {
   useEffect(() => {
-    console.log({ experience, skills, info })
+    console.log({ experience, skills })
   }, [])
   return (
     <div className={''}>
       <div>
         Menu with anchors, social media buttons, and a save to PDF button
       </div>
-      <div>Basic data</div>
+      <BasicInfo {...info} />
       <div>
         <h3>Skills</h3>
         <p>
@@ -59,7 +58,7 @@ export default function Home({
 export const getStaticProps: GetStaticProps = async () => {
   const experience = await getExperience()
   const skills = await getSkills()
-  const info = getPropertiesData((await getInfo()) as PageObjectResponse)
+  const info = await getInfo()
 
   return {
     props: { experience, skills, info },
