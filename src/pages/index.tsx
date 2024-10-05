@@ -1,25 +1,33 @@
-import { getExperience } from '../lib/getExperience'
 import { GetStaticProps } from 'next'
 import { useEffect } from 'react'
-import { getSkills } from '../lib/getSkills'
+import { getExperience } from '../lib/getExperience'
 import { getInfo } from '../lib/getInfo'
-import { getPropertiesData } from '../lib/getPropertiesData'
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
+import { getSkills } from '../lib/getSkills'
+import { experienceAsText } from '../utils/experience'
+import { educationAsText } from '../utils/education'
 
 export default function Home({
   experience,
+  experience_category,
+  experience_contract,
+  experience_country,
   skills,
+  skill_tags,
+  skill_type,
   info,
-}: {
-  experience: ReturnType<typeof getExperience>
-  skills: ReturnType<typeof getSkills>
-  info: ReturnType<typeof getInfo>
-}) {
+}: Awaited<ReturnType<typeof getExperience>>
+  & Awaited<ReturnType<typeof getSkills>>
+  & {
+    info: Awaited<ReturnType<typeof getInfo>>
+  }
+) {
   useEffect(() => {
-    console.log({ experience, skills, info })
+    console.log({ ...experience, ...skills, info })
+    console.log(educationAsText(experience))
   }, [])
   return (
     <div className={''}>
+      <div className="info absolute h-full w-1/6 min-w-40 max-w-80 bg-black"></div>
       <div>
         Menu with anchors, social media buttons, and a save to PDF button
       </div>
@@ -57,12 +65,14 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const experience = await getExperience()
-  const skills = await getSkills()
-  const info = getPropertiesData((await getInfo()) as PageObjectResponse)
+  const [experience, skills, info] = await Promise.all([
+    getExperience(),
+    getSkills(),
+    getInfo()
+  ])
 
   return {
-    props: { experience, skills, info },
+    props: { ...experience, ...skills, info },
     revalidate: 60,
   }
 }
