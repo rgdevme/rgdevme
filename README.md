@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## TODO
+
+- [x] Build side menu with:
+  - [x] Photo
+  - [x] Name
+  - [x] About me/Personal goal
+  - [x] Links to my email, linkedin, and github
+- [x] Build filterable experience list
+  - [ ] Should be downloadable as a pdf, with the filters applied
+- [x] Build top left filter bar to toggle between:
+  - filterable experience list
+  - filterable skills list
+  - blog posts (should be default when ready)
+- [x] Build experience card
+  - On click it should open a modal iwth all the info
+- [ ] Build filterable skills list
+- [ ] Build blog posts list
+- [ ] Build single post view
