@@ -1,78 +1,97 @@
+import { useToggle, useViewportSize } from '@mantine/hooks'
 import { GetStaticProps } from 'next'
-import { useEffect } from 'react'
+import { DateFilter } from '../components/Filter/Dates'
+import { ExperiencesFilter } from '../components/Filter/Experience'
+import { SkillsFilter } from '../components/Filter/Skill'
+import { ExperienceList } from '../components/List/experience'
+import { SideMenu } from '../components/SideMenu'
+import { DataProvider } from '../context/data'
 import { getExperience } from '../lib/getExperience'
 import { getInfo } from '../lib/getInfo'
 import { getSkills } from '../lib/getSkills'
-import { experienceAsText } from '../utils/experience'
-import { educationAsText } from '../utils/education'
 
 export default function Home({
-  experience,
-  experience_category,
-  experience_contract,
-  experience_country,
-  skills,
-  skill_tags,
-  skill_type,
-  info,
-}: Awaited<ReturnType<typeof getExperience>>
-  & Awaited<ReturnType<typeof getSkills>>
-  & {
-    info: Awaited<ReturnType<typeof getInfo>>
-  }
-) {
-  useEffect(() => {
-    console.log({ ...experience, ...skills, info })
-    console.log(educationAsText(experience))
-  }, [])
-  return (
-    <div className={''}>
-      <div className="info absolute h-full w-1/6 min-w-40 max-w-80 bg-black"></div>
-      <div>
-        Menu with anchors, social media buttons, and a save to PDF button
-      </div>
-      <div>Basic data</div>
-      <div>
-        <h3>Skills</h3>
-        <p>
-          View of the top five skills and, down, an arrow drop down to see all
-          of the skills:
-        </p>
-        <ul>
-          <li>Name</li>
-          <li>Gauge: Lvl indicator based on Project count</li>
-          <li>Show related projects on click</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Experiece timeline</h3>
-        <p>
-          Categorized in tabs: Filterable (date, Location, name, scale),
-          timeline-like list of experiences
-        </p>
-        <ul>
-          <li>What, how, when, where, with whom</li>
-          <li>Top 5 Related skills</li>
-          <li>External link on click</li>
-          <li>Modal for full list of skills</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact form</h3>
-      </div>
-    </div>
-  )
+	info,
+	...props
+}: Awaited<ReturnType<typeof getExperience>> &
+	Awaited<ReturnType<typeof getSkills>> & {
+		info: Awaited<ReturnType<typeof getInfo>>
+	}) {
+	const [menuItem, toggle] = useToggle(['experience', 'skills', 'blog'])
+	const { width } = useViewportSize()
+
+	return (
+		<DataProvider
+			data={props}
+			filters={{
+				skill_type: [],
+				experience_category: [],
+				range: [null, null]
+			}}>
+			<div className={''}>
+				<SideMenu {...info} />
+				<div
+					className='p-6'
+					style={{ marginLeft: width < 640 ? 0 : 'clamp(12rem, 40vw, 28rem)' }}>
+					{/* <div id='menu' className='flex justify-evenly '>
+						<span
+							onClick={() => toggle('experience')}
+							className={menuItem === 'experience' ? `font-bold` : ''}>
+							Experience
+						</span>
+						<span
+							onClick={() => toggle('skills')}
+							className={menuItem === 'skills' ? `font-bold` : ''}>
+							Skills
+						</span>
+						<span>Blog</span>
+					</div> */}
+					<div id='views' className='flex flex-col gap-4 mt-4 sm:mt-0'>
+						{menuItem === 'experience' ? (
+							<>
+								<div className='filters flex flex-col md:flex-row gap-2 md:gap-4 mx-auto w-full max-w-3xl'>
+									<DateFilter />
+									<SkillsFilter />
+								</div>
+								<ExperienceList />
+							</>
+						) : menuItem === 'skills' ? (
+							<>
+								<span>Skills</span>
+								<div id='skill-list'>
+									<h3>Skills</h3>
+									<p>
+										View of the top five skills and, down, an arrow drop down to
+										see all of the skills:
+									</p>
+									<ul>
+										<li>Name</li>
+										<li>Gauge: Lvl indicator based on Project count</li>
+										<li>Show related projects on click</li>
+									</ul>
+								</div>
+							</>
+						) : menuItem === 'blog' ? (
+							'Blog'
+						) : (
+							''
+						)}
+					</div>
+				</div>
+			</div>
+		</DataProvider>
+	)
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const [experience, skills, info] = await Promise.all([
-    getExperience(),
-    getSkills(),
-    getInfo()
-  ])
+	const [experience, skills, info] = await Promise.all([
+		getExperience(),
+		getSkills(),
+		getInfo()
+	])
 
-  return {
-    props: { ...experience, ...skills, info },
-    revalidate: 60,
-  }
+	return {
+		props: { ...experience, ...skills, info },
+		revalidate: 60
+	}
 }
