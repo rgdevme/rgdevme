@@ -18,12 +18,12 @@ export const ExperienceCard = ({
 			<div className='flex flex-col md:flex-row gap-4 justify-between md:items-center'>
 				<div className='title'>
 					<span className='role font-black font-display uppercase'>{role}</span>
-					<span className='institution text-zinc-400 font-mono text-sm font-medium'>
+					<span className='institution text-zinc-500 font-mono text-sm font-medium'>
 						{' '}
 						at {institution}
 					</span>
 				</div>
-				<span className='date text-zinc-400 font-mono text-xs font-medium'>
+				<span className='date text-zinc-500 font-mono text-xs font-medium'>
 					<span className='start'>{dateString(start)}</span>
 					{` - `}
 					<span className='end'>{dateString(end)}</span>
