@@ -29,6 +29,7 @@ export const SideMenu = ({
 						width={200}
 						height={200}
 						className='w-[120%] max-w-none object-center relative left-1/2 -translate-x-1/2 z-10'
+						priority={true}
 					/>
 				)}
 			</div>
