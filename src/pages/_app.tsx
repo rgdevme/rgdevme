@@ -29,7 +29,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			<Head>
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 				<title>Rafael González: Full-stack Developer</title>
-
+				<meta
+					name='description'
+					content='Freelance full-stack dev, based in Hungary, and ready to tackle any challenge'
+				/>
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
 				<link
