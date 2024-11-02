@@ -33,6 +33,7 @@ jobs:
       DBID_EXPERIENCE: ${{ vars.DBID_EXPERIENCE }}
       DBID_SKILLS: ${{ vars.DBID_SKILLS }}
       PAGEID_INFO: ${{ vars.PAGEID_INFO }}
+      NEXT_PUBLIC_BASE_URL: rgdevme.github.io
     steps:
       - name: Checkout
         uses: actions/checkout@v4
