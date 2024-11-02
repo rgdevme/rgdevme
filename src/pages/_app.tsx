@@ -33,12 +33,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 					name='description'
 					content='Freelance full-stack dev, based in Hungary, and ready to tackle any challenge'
 				/>
-				<link rel='preconnect' href='https://fonts.googleapis.com' />
-				<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
-				<link
-					href='https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'
-					rel='stylesheet'
-				/>
 			</Head>
 			<MantineProvider theme={theme}>
 				<main
