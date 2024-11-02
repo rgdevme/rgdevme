@@ -11,10 +11,10 @@ const config: Config = {
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
 			},
 			fontFamily: {
-				sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
-				serif: ['Newsreader', ...defaultTheme.fontFamily.serif],
-				mono: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
-				display: ['Gabarito', ...defaultTheme.fontFamily.sans]
+				display: ['var(--font-gabarito)', ...defaultTheme.fontFamily.sans],
+				mono: ['var(--font-jetbrains)', ...defaultTheme.fontFamily.mono],
+				sans: ['var(--font-opensans)', ...defaultTheme.fontFamily.sans],
+				serif: ['var(--font-newsreader)', ...defaultTheme.fontFamily.serif]
 			},
 			margin: {
 				full: '100%'

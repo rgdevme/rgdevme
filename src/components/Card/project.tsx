@@ -23,7 +23,7 @@ export const ProjectCard = ({
 			className='flex flex-col md:flex-row gap-2 md:gap-4 flex-wrap'>
 			<div className='top flex flex-col md:gap-2 flex-none md:min-w-[9rem] relative z-10'>
 				{client && <span className='client font-bold'>{client}</span>}
-				<span className='font-mono text-xs text-zinc-400'>
+				<span className='font-mono text-xs text-zinc-500'>
 					{dateString(start)} - {dateString(end)}
 				</span>
 				<span
@@ -31,7 +31,7 @@ export const ProjectCard = ({
 						opacity: hovered ? 1 : 0,
 						transform: hovered ? 'translateY(0)' : 'translateY(-0.5rem)'
 					}}
-					className='skill-btn hidden md:inline cursor-pointer font-mono  text-xs text-zinc-400 hover:text-zinc-900 text-sm flex flex-1 items-end'
+					className='skill-btn hidden md:inline cursor-pointer font-mono  text-xs text-zinc-500 hover:text-zinc-900 text-sm flex flex-1 items-end'
 					onClick={() => toggleSkills()}>
 					Show skills +
 				</span>
@@ -52,7 +52,7 @@ export const ProjectCard = ({
 					opacity: hideSkills ? 0 : '1',
 					pointerEvents: hideSkills ? 'none' : 'auto'
 				}}
-				className={`hidden md:flex flex-[1_1_100%] relative select-none z-0 gap-x-4 flex-wrap font-mono text-xs font-normal text-zinc-400 opacity-1 gap-2 data-[show=true]:opacity-0`}>
+				className={`hidden md:flex flex-[1_1_100%] relative select-none z-0 gap-x-4 flex-wrap font-mono text-xs font-normal text-zinc-500 opacity-1 gap-2 data-[show=true]:opacity-0`}>
 				{skills
 					.map(skid => skillList.find(s => s.id === skid)!)
 					.map(skill => (
