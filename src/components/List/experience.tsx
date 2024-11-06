@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useData, useFilter, useSetFilter } from '@/src/context/data'
+import { useData, useFilter } from '@/src/context/data'
 import { MergedExperience } from '@/src/utils/experience'
+import dayjs from 'dayjs'
 import { useMemo } from 'react'
 import { ExperienceCard } from '../Card/experience'
-import dayjs from 'dayjs'
 
 export const ExperienceList = () => {
 	const { experience } = useData()
@@ -33,20 +33,9 @@ export const ExperienceList = () => {
 
 						const hasLink = filter.withLink ? y.links.length > 0 : true
 
-						console.log(y.project, {
-							isCategory,
-							hasSkill,
-							filter: filter.skill_type,
-							skills: y.skills,
-							inDateRange,
-							range: filter.range
-						})
-
 						return isCategory && hasSkill && inDateRange && hasLink
 					})
 				]
-
-				console.log({ projects })
 
 				upd.projects = projects
 				if (projects.length !== 0) acc.push(upd)

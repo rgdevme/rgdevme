@@ -27,8 +27,8 @@ export const ProjectCard = ({
 	return (
 		<div
 			ref={hoverRef}
-			className='flex flex-col md:flex-row gap-2 md:gap-4 flex-wrap'>
-			<div className='top flex flex-col md:gap-2 flex-none md:min-w-[9rem] relative z-10 text-right w-40'>
+			className='flex flex-col md:flex-row gap-2 md:gap-4 sm:flex-wrap'>
+			<div className='top flex flex-col md:gap-2 flex-none md:min-w-[9rem] relative z-10 text-center md:text-right w-full sm:w-40'>
 				{client && <span className='client font-bold'>{client}</span>}
 				<span className='font-mono text-xs text-zinc-500'>
 					<span
@@ -65,7 +65,7 @@ export const ProjectCard = ({
 							transitionProperty: 'box-shadow, transform',
 							aspectRatio: '3/2'
 						}}
-						className='rounded-lg shadow-md hover:shadow-2xl z-20 object-cover object-center'
+						className='rounded-lg shadow-md hover:shadow-2xl z-20 object-cover object-center w-full'
 					/>
 				)}
 				<span
@@ -78,7 +78,7 @@ export const ProjectCard = ({
 					Show skills +
 				</span>
 			</div>
-			<div className='bot flex flex-col gap-2 flex-1'>
+			<div className='bot flex flex-col gap-2 flex-1 w-full md:w-0'>
 				<span className='font-bold'>{project}</span>
 				<div className='description text-justify leading-6 h-full'>
 					{description.split('\n').map(z => (

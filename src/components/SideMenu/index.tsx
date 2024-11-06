@@ -17,7 +17,7 @@ export const SideMenu = ({
 	email
 }: Awaited<ReturnType<typeof getInfo>>) => {
 	return (
-		<div className='cursor-default sm:fixed sm:max-w-md sm:max-h-screen h-screen overflow-overlay overflow-x-hidden bg-zinc-900 no-scrollbar static w-screen sm:w-[40vw]'>
+		<div className='cursor-default sm:fixed sm:max-w-md sm:max-h-screen h-auto overflow-overlay overflow-x-hidden bg-zinc-900 no-scrollbar static w-screen sm:w-[40vw]'>
 			<div className='bg-zinc-100 relative after:content-[""] after:w-full after:h-64 after:bottom-0 after:absolute after:bg-gradient-to-t after:from-zinc-900 after:to-transparent after:z-10'>
 				<h2 className='relative text-5xl sm:text-4xl md:text-5xl leading-none text-zinc-600 font-display font-black		 uppercase px-8 pt-8 -mb-8 z-0'>
 					{name}
