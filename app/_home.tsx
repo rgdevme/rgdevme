@@ -1,15 +1,15 @@
+'use client'
+
 import { useToggle, useViewportSize } from '@mantine/hooks'
-import { GetStaticProps } from 'next'
-import { DateFilter } from '../components/Filter/Dates'
-import { ExperiencesFilter } from '../components/Filter/Experience'
-import { SkillsFilter } from '../components/Filter/Skill'
-import { ExperienceList } from '../components/List/experience'
-import { SideMenu } from '../components/SideMenu'
-import { DataProvider } from '../context/data'
-import { getExperience } from '../lib/getExperience'
-import { getInfo } from '../lib/getInfo'
-import { getSkills } from '../lib/getSkills'
-import { WithLink } from '../components/Filter/Link'
+import { DateFilter } from '../src/components/Filter/Dates'
+import { WithLink } from '../src/components/Filter/Link'
+import { SkillsFilter } from '../src/components/Filter/Skill'
+import { ExperienceList } from '../src/components/List/experience'
+import { SideMenu } from '../src/components/SideMenu'
+import { DataProvider } from '../src/context/data'
+import { getExperience } from '../src/lib/getExperience'
+import { getInfo } from '../src/lib/getInfo'
+import { getSkills } from '../src/lib/getSkills'
 
 export default function Home({
 	info,
@@ -87,17 +87,4 @@ export default function Home({
 			</div>
 		</DataProvider>
 	)
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-	const [experience, skills, info] = await Promise.all([
-		getExperience(),
-		getSkills(),
-		getInfo()
-	])
-
-	return {
-		props: { ...experience, ...skills, info },
-		revalidate: 60
-	}
 }
