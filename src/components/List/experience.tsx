@@ -61,7 +61,9 @@ export const ExperienceList = () => {
 	)
 
 	return (
-		<div id='experience-list' className='flex flex-col gap-8 mx-auto max-w-3xl'>
+		<div
+			id='experience-list'
+			className='flex flex-col gap-8 mx-auto max-w-3xl w-full'>
 			{filteredExperiences.map(data => (
 				<ExperienceCard key={data.institution} {...data} />
 			))}

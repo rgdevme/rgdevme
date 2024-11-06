@@ -34,7 +34,10 @@ export default function Home({
 				<SideMenu {...info} />
 				<div
 					className='p-6'
-					style={{ marginLeft: width < 640 ? 0 : 'clamp(12rem, 40vw, 28rem)' }}>
+					style={{
+						marginLeft: width < 640 ? 0 : 'clamp(12rem, 40vw, 28rem)',
+						overflowX: 'hidden'
+					}}>
 					{/* <div id='menu' className='flex justify-evenly '>
 						<span
 							onClick={() => toggle('experience')}
