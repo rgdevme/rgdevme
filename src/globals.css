@@ -45,7 +45,7 @@ body {
 }
 
 * {
-	transition-property: opacity background;
+	transition-property: opacity, background;
 	transition-duration: 150ms;
 	transition-timing-function: ease-in-out;
 }
