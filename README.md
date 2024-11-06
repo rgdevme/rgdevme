@@ -1,55 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcome! 🤘🏼
 
-## Getting Started
+My name is Rafael Gónzalez and I'm a Fullstack Developer, based in Hungary.
 
-First, run the development server:
+I’m passionate about crafting elegant, efficient, and innovative solutions, and I specialize in building scalable and secure web applications with modern technologies, ensuring they have a robust backend and an intuitive frontend.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can check my interactive CV at [rgdevme.vercel](https://rgdevme.vercel.app/) and [rgdevme.github](https://rgdevme.github.io/rgdevme/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Let’s bring your digital vision to life!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Want to know more about my skills?
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Take a look at this repo! It's my CV and playground 🔥
 
-## Learn More
+Quick run down of it:
 
-To learn more about Next.js, take a look at the following resources:
+- It's made with Notion as a DB, and Next.js for the UI.
+- It uses Vercel and Github Pages for deployment (just for fun).
+- It's statically generated, for excelent speed and SEO (it's also very small).
+- It was build in about a week or so.
+- It includes al the info you'll need about me.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## TODO
-
-- [x] Build side menu with:
-  - [x] Photo
-  - [x] Name
-  - [x] About me/Personal goal
-  - [x] Links to my email, linkedin, and github
-- [x] Build filterable experience list
-  - [ ] Should be downloadable as a pdf, with the filters applied
-- [x] Build top left filter bar to toggle between:
-  - filterable experience list
-  - filterable skills list
-  - blog posts (should be default when ready)
-- [x] Build experience card
-  - On click it should open a modal iwth all the info
-- [ ] Build filterable skills list
-- [ ] Build blog posts list
-- [ ] Build single post view
+![](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm56MDF1bWp6YW9xbnJ3emp2Y3JlbnNtN3IxajVjeG1qMWw5OW54eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ui1hpJSyBDWlG/giphy.gif)
