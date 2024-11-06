@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = () => {
-	return { output: 'export' }
-}
+module.exports = { output: 'export' }
+
 /** ({
  * i18n: {
  * 	// These are all the locales you want to support in
