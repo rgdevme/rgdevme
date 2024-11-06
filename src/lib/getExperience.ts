@@ -67,7 +67,6 @@ export const getExperience = async () => {
 		return {
 			id: x.id,
 			cover: getCover(x),
-			// icon: x.icon ? x.icon[x.icon.type] : undefined,
 			created: x.created_time,
 			updated: x.last_edited_time,
 			category: category_select?.id ?? null,
@@ -96,7 +95,8 @@ export const getExperience = async () => {
 				.map(y => y.plain_text)
 				.join(''),
 			skills: getRelations(x.properties.skills).map(y => y.id ?? null) ?? null,
-			links: getLinks(x.properties.link)
+			links: getLinks(x.properties.link),
+			images: getLinks(x.properties.images)
 		}
 	})
 
@@ -118,7 +118,7 @@ export type ExperienceItem = {
 	created: string
 	description: string
 	end: string | null
-	// icon: string
+	images: { name: string; url: string | null }[]
 	id: string
 	institution: string
 	links: { name: string; url: string | null }[]
