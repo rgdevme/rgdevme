@@ -30,7 +30,7 @@ jobs:
     environment: github-pages
     runs-on: ubuntu-latest
     env:
-      NOTION_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      NOTION_TOKEN: '${{ secrets.NOTION_TOKEN }}'
       DBID_EXPERIENCE: '${{ vars.DBID_EXPERIENCE }}'
       DBID_SKILLS: '${{ vars.DBID_SKILLS }}'
       PAGEID_INFO: '${{ vars.PAGEID_INFO }}'
