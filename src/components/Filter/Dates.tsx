@@ -14,7 +14,15 @@ export const DateFilter = () => {
 			radius='xl'
 			valueFormat='MMM. YY'
 			clearable
-			styles={{ input: { background: 'white', border: 0 } }}
+			styles={{
+				input: {
+					background: 'white',
+					border: 0,
+					// fontFamily: 'JetBrains Mono',
+					fontWeight: 200,
+					textTransform: range.some(x => x) ? 'lowercase' : 'none'
+				}
+			}}
 			popoverProps={{ styles: { dropdown: { borderRadius: '1rem' } } }}
 			className='drop-shadow-md'
 		/>

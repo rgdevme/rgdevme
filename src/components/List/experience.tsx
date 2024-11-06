@@ -3,6 +3,7 @@ import { useData, useFilter, useSetFilter } from '@/src/context/data'
 import { MergedExperience } from '@/src/utils/experience'
 import { useMemo } from 'react'
 import { ExperienceCard } from '../Card/experience'
+import dayjs from 'dayjs'
 
 export const ExperienceList = () => {
 	const { experience } = useData()
@@ -22,14 +23,26 @@ export const ExperienceList = () => {
 							filter.skill_type.length === 0 ||
 							filter.skill_type.every(z => y.skills?.includes(z))
 
+						const inDateRange =
+							(filter.range[0] !== null
+								? !dayjs(filter.range[0]).isAfter(dayjs(y.start))
+								: true) &&
+							(filter.range[1] !== null
+								? !dayjs(filter.range[1]).isBefore(dayjs(y.end))
+								: true)
+
+						const hasLink = filter.withLink ? y.links.length > 0 : true
+
 						console.log(y.project, {
 							isCategory,
 							hasSkill,
 							filter: filter.skill_type,
-							skills: y.skills
+							skills: y.skills,
+							inDateRange,
+							range: filter.range
 						})
 
-						return isCategory && hasSkill
+						return isCategory && hasSkill && inDateRange && hasLink
 					})
 				]
 
@@ -39,10 +52,13 @@ export const ExperienceList = () => {
 				if (projects.length !== 0) acc.push(upd)
 				return acc
 			}, [] as MergedExperience[]),
-		[filter.experience_category, filter.skill_type]
+		[
+			filter.experience_category,
+			filter.skill_type,
+			filter.range,
+			filter.withLink
+		]
 	)
-
-	console.log({ experience })
 
 	return (
 		<div id='experience-list' className='flex flex-col gap-8 mx-auto max-w-3xl'>

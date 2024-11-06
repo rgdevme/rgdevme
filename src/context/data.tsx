@@ -24,6 +24,7 @@ type Data = {
 		skill_type: string[]
 		experience_category: string[]
 		range: [Date | null, Date | null]
+		withLink: boolean
 	}
 }
 
@@ -44,7 +45,8 @@ const DataCtx = createContext<Data & Methods>({
 	filters: {
 		skill_type: [],
 		experience_category: [],
-		range: [null, null]
+		range: [null, null],
+		withLink: false
 	},
 	setFilter: () => {}
 })
@@ -59,15 +61,22 @@ export const DataProvider = ({
 		seState(p => {
 			const upd = { ...p }
 
-			if (Array.isArray(val)) {
-				upd.filters[prop] = val as any
-			} else if (
-				typeof val === 'string' &&
-				upd.filters[prop].includes(val as any)
-			) {
-				upd.filters[prop] = [...upd.filters[prop].filter(x => x !== val)] as any
-			} else {
-				upd.filters[prop] = [...upd.filters[prop], val] as any
+			switch (prop) {
+				case 'withLink':
+				case 'range':
+					upd.filters[prop] = val
+					break
+				case 'experience_category':
+				case 'skill_type':
+					if (typeof val === 'string' && upd.filters[prop].includes(val)) {
+						upd.filters[prop] = [...upd.filters[prop].filter(x => x !== val)]
+					} else {
+						upd.filters[prop] = [...upd.filters[prop], val]
+					}
+					break
+
+				default:
+					break
 			}
 
 			return upd

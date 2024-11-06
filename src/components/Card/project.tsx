@@ -1,8 +1,11 @@
-import { useData } from '@/src/context/data'
+import { useData, useSetFilter } from '@/src/context/data'
 import { dateString } from '@/src/utils/date'
 import { MergedExperience } from '@/src/utils/experience'
 import { useElementSize, useHover, useToggle } from '@mantine/hooks'
 import { SkillCard } from './skill'
+import { IconExternalLink } from '@tabler/icons-react'
+import Link from 'next/link'
+import dayjs from 'dayjs'
 
 export const ProjectCard = ({
 	project,
@@ -10,9 +13,11 @@ export const ProjectCard = ({
 	description,
 	start,
 	skills,
-	end
+	end,
+	links
 }: MergedExperience['projects'][number]) => {
 	const { skills: skillList } = useData()
+	const set = useSetFilter()
 	const [hideSkills, toggleSkills] = useToggle([true, false])
 	const { ref: sizeRef, height } = useElementSize()
 	const { ref: hoverRef, hovered } = useHover()
@@ -24,7 +29,27 @@ export const ProjectCard = ({
 			<div className='top flex flex-col md:gap-2 flex-none md:min-w-[9rem] relative z-10'>
 				{client && <span className='client font-bold'>{client}</span>}
 				<span className='font-mono text-xs text-zinc-500'>
-					{dateString(start)} - {dateString(end)}
+					<span
+						className='cursor-pointer hover:text-zinc-900'
+						onClick={() =>
+							set('range', [
+								dayjs(start).startOf('month').toDate(),
+								dayjs().endOf('month').toDate()
+							])
+						}>
+						{dateString(start)}
+					</span>
+					{' - '}
+					<span
+						className='cursor-pointer hover:text-zinc-900'
+						onClick={() =>
+							set('range', [
+								dayjs(end).startOf('month').toDate(),
+								dayjs().endOf('month').toDate()
+							])
+						}>
+						{dateString(end)}
+					</span>
 				</span>
 				<span
 					style={{
@@ -37,7 +62,22 @@ export const ProjectCard = ({
 				</span>
 			</div>
 			<div className='bot flex flex-col gap-2 flex-1'>
-				<span className='font-bold'>{project}</span>
+				<span className='font-bold'>
+					{links.length
+						? links.map(link => (
+								<>
+									<Link
+										key={link.name}
+										href={link.url!}
+										title={link.name}
+										target='_blank'
+										className='flex flex-row gap-2 items-center justify-start w-min break-keep whitespace-nowrap	'>
+										<IconExternalLink size={14} /> {project}
+									</Link>
+								</>
+						  ))
+						: project}
+				</span>
 				<div className='description text-justify leading-6'>
 					{description.split('\n').map(z => (
 						<p key={z}>{z}</p>

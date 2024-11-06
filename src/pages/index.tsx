@@ -9,6 +9,7 @@ import { DataProvider } from '../context/data'
 import { getExperience } from '../lib/getExperience'
 import { getInfo } from '../lib/getInfo'
 import { getSkills } from '../lib/getSkills'
+import { WithLink } from '../components/Filter/Link'
 
 export default function Home({
 	info,
@@ -26,7 +27,8 @@ export default function Home({
 			filters={{
 				skill_type: [],
 				experience_category: [],
-				range: [null, null]
+				range: [null, null],
+				withLink: false
 			}}>
 			<div className={''}>
 				<SideMenu {...info} />
@@ -49,9 +51,10 @@ export default function Home({
 					<div id='views' className='flex flex-col gap-4 mt-4 sm:mt-0'>
 						{menuItem === 'experience' ? (
 							<>
-								<div className='filters flex flex-col md:flex-row gap-2 md:gap-4 mx-auto w-full max-w-3xl'>
+								<div className='filters flex flex-col md:flex-row gap-2 md:gap-4 mx-auto w-full max-w-3xl '>
 									<DateFilter />
 									<SkillsFilter />
+									<WithLink />
 								</div>
 								<ExperienceList />
 							</>
