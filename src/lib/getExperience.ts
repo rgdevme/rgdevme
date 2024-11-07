@@ -67,12 +67,12 @@ export const getExperience = async () => {
 				experience_country.push(country_select)
 			}
 
-			const images = await Promise.all(
-				getLinks(x.properties.images).map(async i => {
-					const url = await downloadImage(i.url!, 'exp', i.name)
-					return { ...i, url }
-				})
-			)
+			const images: { url: string | null; name: string }[] = []
+
+			for (const i of getLinks(x.properties.images)) {
+				const url = await downloadImage(i.url!, 'exp', i.name)
+				images.push({ ...i, url })
+			}
 
 			return {
 				id: x.id,
