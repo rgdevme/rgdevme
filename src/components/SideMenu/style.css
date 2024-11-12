@@ -1,0 +1,105 @@
+.sidebar {
+	@apply bg-zinc-900
+  cursor-default
+  h-auto
+  no-scrollbar
+  overflow-overlay
+  overflow-x-hidden
+  static
+  w-screen
+
+  sm:fixed
+  sm:max-h-screen
+  sm:max-w-md
+  sm:w-[40vw];
+
+	.profile-wrap {
+		@apply bg-zinc-100
+    overflow-hidden
+    relative;
+		max-height: calc(100vh - 7.5rem);
+
+		&::after {
+			@apply absolute
+      bg-gradient-to-t
+      bottom-0
+      content-[""]
+      from-zinc-900
+      h-64
+      to-transparent
+      w-full
+      z-10;
+		}
+	}
+
+	.name {
+		@apply -mb-8
+    font-black		
+    font-display
+    leading-none
+    pt-8
+    px-8
+    relative
+    text-5xl
+    text-zinc-600
+    uppercase
+    z-0
+
+    sm:text-4xl
+    md:text-5xl;
+	}
+	.profile-pic {
+		@apply left-1/2
+    max-w-none
+    object-center
+    relative
+    -translate-x-1/2
+    w-[120%]
+    z-10;
+	}
+
+	.links-wrap {
+		@apply flex
+    flex-row
+    font-mono
+    gap-2
+    justify-evenly
+    p-8
+    pb-4
+    text-zinc-400;
+
+		> * {
+			@apply capitalize;
+
+			a {
+				@apply hover:text-zinc-300 active:text-zinc-100;
+			}
+
+			span {
+				@apply hidden;
+			}
+		}
+	}
+
+	.about-me {
+		@apply flex
+    flex-col
+    font-mono
+    gap-4
+    justify-evenly
+    px-8
+    pt-4
+    mb-12
+    text-zinc-400;
+
+		p {
+			@apply hover:text-zinc-200
+      transition-colors;
+
+			&[data-last='true'] {
+				@apply font-black 
+        text-zinc-200;
+			}
+		}
+	}
+}

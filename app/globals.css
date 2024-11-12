@@ -5,6 +5,9 @@
 @import '@mantine/core/styles.css';
 @import '@mantine/dates/styles.css';
 
+@layer components {
+}
+
 @layer utilities {
 	/* Hide scrollbar for Chrome, Safari and Opera */
 	.no-scrollbar::-webkit-scrollbar {
@@ -26,37 +29,17 @@
 	}
 }
 
-:root {
-	--foreground-rgb: 0, 0, 0;
-	--background-start-rgb: 214, 219, 220;
-	--background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 255, 255, 255;
-		--background-start-rgb: 0, 0, 0;
-		--background-end-rgb: 0, 0, 0;
-	}
-}
-
+html,
 body {
-	@apply bg-zinc-100;
+	@apply bg-zinc-100
+	text-zinc-800
+	transition-none;
 }
 
-* {
-	transition-property: opacity, background;
-	transition-duration: 150ms;
-	transition-timing-function: ease-in-out;
-}
-
-*::-moz-selection {
-	color: #18181b;
-	background: #d4d4d8;
-}
+*::-moz-selection,
 *::selection {
-	color: #18181b;
-	background: #d4d4d8;
+	color: theme('colors.zinc.800');
+	background: theme('colors.zinc.100');
 }
 
 *::-webkit-scrollbar {
@@ -72,5 +55,5 @@ body {
 
 *::-webkit-scrollbar-thumb {
 	border-radius: 8px;
-	background-color: #71717a;
+	background-color: theme('colors.zinc.400');
 }
