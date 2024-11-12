@@ -18,7 +18,9 @@ export const SideMenu = ({
 }: Awaited<ReturnType<typeof getInfo>>) => {
 	return (
 		<div className='cursor-default sm:fixed sm:max-w-md sm:max-h-screen h-auto overflow-overlay overflow-x-hidden bg-zinc-900 no-scrollbar static w-screen sm:w-[40vw]'>
-			<div className='bg-zinc-100 relative after:content-[""] after:w-full after:h-64 after:bottom-0 after:absolute after:bg-gradient-to-t after:from-zinc-900 after:to-transparent after:z-10'>
+			<div
+				className='bg-zinc-100 relative after:content-[""] after:w-full after:h-64 after:bottom-0 after:absolute after:bg-gradient-to-t after:from-zinc-900 after:to-transparent after:z-10 overflow-hidden'
+				style={{ maxHeight: 'calc(100vh - 7.5rem)' }}>
 				<h2 className='relative text-5xl sm:text-4xl md:text-5xl leading-none text-zinc-600 font-display font-black		 uppercase px-8 pt-8 -mb-8 z-0'>
 					{name}
 				</h2>
@@ -33,8 +35,8 @@ export const SideMenu = ({
 					/>
 				)}
 			</div>
-			<div className='bg-zinc-900 p-8 flex font-mono flex-col gap-4 text-zinc-500'>
-				<div className='flex flex-row gap-2 justify-evenly'>
+			<div className='bg-zinc-900 p-8 flex font-mono flex-col gap-4 text-zinc-400'>
+				<div className='flex flex-row gap-2 justify-evenly mb-8'>
 					<Tooltip label='Email' className='cammelcase'>
 						<a href={`mailto:${email}`} className='hover:text-zinc-300'>
 							<IconMail />
@@ -69,10 +71,22 @@ export const SideMenu = ({
 					))}
 				</div>
 
-				<h3 className='text-lg uppercase font-display font-bold p-0 hover:text-zinc-300'>
+				{/* <h3 className='text-lg uppercase font-display font-bold p-0 hover:text-zinc-300'>
 					About me
-				</h3>
-				<p className='hover:text-zinc-300 font-thin'>{goal}</p>
+				</h3> */}
+				{goal
+					.trim()
+					.split('\n')
+					.map((p, i, a) => (
+						<p
+							key={i}
+							className={`hover:text-zinc-200 ${
+								i === a.length - 1 ? 'font-black text-zinc-200' : ''
+							}`}
+							style={{ transitionProperty: 'color' }}>
+							{p}
+						</p>
+					))}
 			</div>
 		</div>
 	)
