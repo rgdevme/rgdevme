@@ -3,13 +3,25 @@
     "name": "Rafael González",
     "birthday": "July 9, 1991",
     "links": [
-      "https://www.linkedin.com/in/rafael-gonzalez",
-      "https://github.com/rgdevme",
-      "https://www.behance.net/rafaelgonz904f"
+      {
+        "name": "linkedin",
+        "url": "https://linkedin.com/in/rafael-gonzalez"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/rgdevme"
+      },
+      {
+        "name": "behance",
+        "url": "https://behance.net/rafaelgonz904f"
+      }
     ],
     "goal": "I'm a full-stack Node.js developer with a passion for crafting elegant and efficient web applications.\nI excel at building robust backends and intuitive frontends, leveraging modern technologies.\nLet’s bring your digital vision to life!",
     "email": "reggon81@gmail.com",
-    "nationality": "Hungarian, Venezuelan",
+    "nationality": [
+      "Hungarian",
+      "Venezuelan"
+    ],
     "profile_picture": "ig-15-fixed.webp"
   }
 ]
