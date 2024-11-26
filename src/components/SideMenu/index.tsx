@@ -10,6 +10,7 @@ import { Tooltip } from '@mantine/core'
 import Link from 'next/link'
 
 import './style.css'
+import { ProfileModel } from '@/src/firebase/types/profile'
 
 export const SideMenu = ({
 	profile_picture,
@@ -17,7 +18,7 @@ export const SideMenu = ({
 	goal,
 	links,
 	email
-}: Awaited<ReturnType<typeof getInfo>>) => {
+}: ProfileModel) => {
 	const linkElements = [
 		{ name: 'email', url: `mailto:${email}` },
 		...links

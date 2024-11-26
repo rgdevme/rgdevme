@@ -1,24 +1,18 @@
 /* eslint-disable react/no-children-prop */
-import {
-	createContext,
-	PropsWithChildren,
-	useContext,
-	useEffect,
-	useState
-} from 'react'
-import { Skill } from '../lib/getSkills'
-import { MergedExperience } from '../utils/experience'
+import { createContext, PropsWithChildren, useContext, useState } from 'react'
+import { SkillModel } from '../firebase/types/skill'
+import { MergedExperience } from '../lib/getExperience'
 import { NotionSelect } from '../utils/notion'
 
 type Data = {
 	data: {
 		experience: MergedExperience[]
-		skills: Skill[]
-		skill_type: NotionSelect[]
-		skill_tags: NotionSelect[]
-		experience_category: NotionSelect[]
-		experience_country: NotionSelect[]
-		experience_contract: NotionSelect[]
+		skills: SkillModel[]
+		skill_type: string[]
+		skill_tags: string[]
+		experience_category: string[]
+		experience_country: string[]
+		experience_contract: string[]
 	}
 	filters: {
 		skill_type: string[]

@@ -1,7 +1,6 @@
-import dayjs, { Dayjs } from 'dayjs'
-import { ExperienceItem, getExperience } from '../lib/getExperience'
+import { ExperienceModel } from '../firebase/types/experience'
 
-export const experienceAsText = (items: ExperienceItem[]) => {
+export const experienceAsText = (items: ExperienceModel[]) => {
 	console.clear()
 
 	const now = Date.now()
@@ -41,10 +40,13 @@ export const experienceAsText = (items: ExperienceItem[]) => {
 		}))
 		.filter(x => x.category === '9147e54b-6480-4a28-985c-407afcbca5f8')
 		.forEach(x => {
+			const start = x.start?.toDate() ?? new Date()
+			const end = x.end?.toDate() ?? new Date()
+
 			if (!records.has(x.institution)) {
 				records.set(x.institution, {
-					start: new Date(x.start),
-					end: new Date(x.end ?? now),
+					start,
+					end,
 					clients: new Map(),
 					institution: x.institution,
 					role: x.role
@@ -53,38 +55,38 @@ export const experienceAsText = (items: ExperienceItem[]) => {
 
 			const institutionData = records.get(x.institution)!
 
-			if (institutionData.start.valueOf() > new Date(x.start).valueOf()) {
-				institutionData.start = new Date(x.start)
+			if (institutionData.start.valueOf() > start.valueOf()) {
+				institutionData.start = start
 			}
-			if (institutionData.end.valueOf() < new Date(x.end ?? now).valueOf()) {
-				institutionData.end = new Date(x.end ?? now)
+			if (institutionData.end.valueOf() < end.valueOf()) {
+				institutionData.end = end
 				institutionData.role = x.role.trim()
 			}
 
 			if (!institutionData.clients.has(x.client)) {
 				institutionData.clients.set(x.client, {
 					client: x.client,
-					start: new Date(x.start),
-					end: new Date(x.end ?? now),
+					start,
+					end,
 					items: [],
 					role: x.role
 				})
 			}
 			const clientData = institutionData.clients.get(x.client)!
 
-			if (clientData.start.valueOf() > new Date(x.start).valueOf()) {
-				clientData.start = new Date(x.start)
+			if (clientData.start.valueOf() > start.valueOf()) {
+				clientData.start = start
 			}
-			if (clientData.end.valueOf() < new Date(x.end ?? now).valueOf()) {
-				clientData.end = new Date(x.end ?? now)
+			if (clientData.end.valueOf() < end.valueOf()) {
+				clientData.end = end
 			}
 
 			const items = [
 				...clientData.items,
 				{
 					description: x.description,
-					start: new Date(x.start),
-					end: new Date(x.end ?? now)
+					start,
+					end
 				}
 			].sort((a, b) => b.start.valueOf() - a.start.valueOf())
 			clientData.items = items
@@ -121,43 +123,4 @@ export const experienceAsText = (items: ExperienceItem[]) => {
 				})
 			})
 	})
-}
-
-export type MergedExperience = Pick<
-	ExperienceItem,
-	'role' | 'contract' | 'country' | 'institution' | 'start' | 'end'
-> & {
-	projects: Omit<
-		ExperienceItem,
-		'institution' | 'country' | 'contract' | 'role'
-	>[]
-}
-
-export const mergeExperiences = (experiences: ExperienceItem[]) => {
-	const mergedExperiences = new Map<string, MergedExperience>()
-
-	experiences.forEach(({ institution, country, contract, role, ...exp }) => {
-		if (!mergedExperiences.has(institution)) {
-			mergedExperiences.set(institution, {
-				institution,
-				country,
-				contract,
-				start: exp.start,
-				end: exp.end ? exp.end : null,
-				role,
-				projects: []
-			})
-		}
-
-		const current = mergedExperiences.get(institution)!
-		const newStart = dayjs(exp.start)
-		const newEnd = exp.end ? dayjs(exp.end) : null
-		current.projects.push(exp)
-		if (newStart.isBefore(current.start)) current.start = exp.start
-		if (newEnd && current.end && newEnd.isAfter(current.end)) {
-			current.end = exp.end
-		}
-	})
-
-	return Array.from(mergedExperiences.values())
 }
