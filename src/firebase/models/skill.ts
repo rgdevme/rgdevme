@@ -7,9 +7,9 @@ export const skillStore = fireborm.initializeStore<
 	SkillDefault,
 	SkillDefault
 >({
-	singular: 'Skill',
-	plural: 'Skills',
-	path: 'skill',
+	singular: 'Term',
+	plural: 'Terms',
+	path: 'terms',
 	defaultData: {
 		institution: '',
 		name: '',
@@ -18,8 +18,9 @@ export const skillStore = fireborm.initializeStore<
 		use_count: 0,
 		certifications: []
 	},
-	toModel: ({ id, ref, data }) => {
-		const { ...docData } = data()
+	toModel: doc => {
+		const { id, ref } = doc
+		const docData = doc.data()
 		const model = {
 			...docData,
 			use_count: docData.certifications.length,

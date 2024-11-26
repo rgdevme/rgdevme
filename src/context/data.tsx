@@ -1,8 +1,19 @@
 /* eslint-disable react/no-children-prop */
-import { createContext, PropsWithChildren, useContext, useState } from 'react'
+import {
+	createContext,
+	PropsWithChildren,
+	useContext,
+	useEffect,
+	useState
+} from 'react'
+import { experienceStore } from '../firebase/models/experience'
 import { SkillModel } from '../firebase/types/skill'
-import { MergedExperience } from '../lib/getExperience'
-import { NotionSelect } from '../utils/notion'
+import {
+	extractExperienceData,
+	MergedExperience
+} from '../lib/transformers/experience'
+import { skillStore } from '../firebase/models/skill'
+import { extractSkillData } from '../lib/transformers/skill'
 
 type Data = {
 	data: {
@@ -11,7 +22,6 @@ type Data = {
 		skill_type: string[]
 		skill_tags: string[]
 		experience_category: string[]
-		experience_country: string[]
 		experience_contract: string[]
 	}
 	filters: {
@@ -26,14 +36,13 @@ type Methods = {
 	setFilter: (prop: keyof Data['filters'], val: any) => void
 }
 
-const DataCtx = createContext<Data & Methods>({
+const initialCtx: Data = {
 	data: {
 		experience: [],
 		skills: [],
 		skill_type: [],
 		skill_tags: [],
 		experience_category: [],
-		experience_country: [],
 		experience_contract: []
 	},
 	filters: {
@@ -41,18 +50,19 @@ const DataCtx = createContext<Data & Methods>({
 		experience_category: [],
 		range: [null, null],
 		withLink: false
-	},
+	}
+}
+
+const DataCtx = createContext<Data & Methods>({
+	...initialCtx,
 	setFilter: () => {}
 })
 
-export const DataProvider = ({
-	children,
-	...data
-}: PropsWithChildren<Data>) => {
-	const [state, seState] = useState(data)
+export const DataProvider = ({ children }: PropsWithChildren) => {
+	const [state, setState] = useState(initialCtx)
 
 	const setFilter: Methods['setFilter'] = (prop, val) => {
-		seState(p => {
+		setState(p => {
 			const upd = { ...p }
 
 			switch (prop) {
@@ -76,6 +86,27 @@ export const DataProvider = ({
 			return upd
 		})
 	}
+
+	const getContextData = async () => {
+		const expdata = await experienceStore.query({ where: [] })
+		const exp = extractExperienceData(expdata)
+
+		const skilldata = await skillStore.query({ where: [] })
+		const skill = extractSkillData(skilldata)
+
+		setState(p => {
+			p.data = { ...exp, ...skill }
+			return p
+		})
+	}
+
+	useEffect(() => {
+		getContextData()
+	}, [])
+
+	useEffect(() => {
+		console.log({ state })
+	}, [state])
 
 	return (
 		<DataCtx.Provider value={{ ...state, setFilter }} children={children} />

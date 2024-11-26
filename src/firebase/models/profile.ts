@@ -22,17 +22,17 @@ export const profileStore = fireborm.initializeStore<
 		links: [],
 		email: { name: 'email', url: '' }
 	},
-	toModel: ({ id, ref, data }) => {
-		const { ...docData } = data()
+	toModel: doc => {
+		const docData = doc.data()
 		const model = {
 			...docData,
-			id,
-			_ref: ref as ProfileRef
+			id: doc.id
+			// _ref: doc.ref as ProfileRef
 		}
 
 		return model
 	},
-	toDocument: ({ id, _ref, ...model }) => {
+	toDocument: ({ id, ...model }) => {
 		const doc = model
 		return doc
 	}

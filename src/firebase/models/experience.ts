@@ -17,7 +17,6 @@ export const experienceStore = fireborm.initializeStore<
 	singular: 'Experience',
 	plural: 'Experiences',
 	path: 'experience',
-	deleteOnUndefined: ['completed'],
 	defaultData: {
 		project: '',
 		role: '',
@@ -26,10 +25,13 @@ export const experienceStore = fireborm.initializeStore<
 		client: '',
 		skills: [],
 		links: [],
-		images: []
+		images: [],
+		type: '',
+		format: ''
 	},
-	toModel: ({ id, ref, data, metadata }) => {
-		const { start, end, ...docData } = data()
+	toModel: doc => {
+		const { id, ref } = doc
+		const { start, end, ...docData } = doc.data()
 		const model = {
 			...docData,
 			id,

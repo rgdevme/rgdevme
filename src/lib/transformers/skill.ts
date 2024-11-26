@@ -1,7 +1,6 @@
-import { skillStore } from '../firebase/models/skill'
+import { SkillModel } from '@/src/firebase/types/skill'
 
-export const getSkills = async () => {
-	const results = await skillStore.query({ where: [] })
+export const extractSkillData = (results: SkillModel[]) => {
 	const sortedResults = results.sort((a, b) => {
 		if (b.area === a.area) {
 			if (b.type === a.type) {
@@ -19,16 +18,18 @@ export const getSkills = async () => {
 
 	const [tags, type] = results.reduce(
 		(acc, curr) => {
-			curr.tags.forEach(t => acc[0].add(t))
+			;(curr.tags as unknown as string).split(',')?.forEach(t => acc[0].add(t))
 			if (curr.type) acc[1].add(curr.type)
 			return acc
 		},
 		[new Set<string>(), new Set<string>()]
 	)
 
-	return {
+	const finalResutls = {
 		skills: sortedResults,
 		skill_tags: Array.from(tags),
 		skill_type: Array.from(type)
 	}
+
+	return finalResutls
 }

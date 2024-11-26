@@ -1,5 +1,6 @@
 'use client'
 
+import { ProfileModel } from '@/src/firebase/types/profile'
 import { useToggle, useViewportSize } from '@mantine/hooks'
 import { DateFilter } from '../src/components/Filter/Dates'
 import { WithLink } from '../src/components/Filter/Link'
@@ -7,29 +8,13 @@ import { SkillsFilter } from '../src/components/Filter/Skill'
 import { ExperienceList } from '../src/components/List/experience'
 import { SideMenu } from '../src/components/SideMenu'
 import { DataProvider } from '../src/context/data'
-import { getExperience } from '../src/lib/getExperience'
-import { getInfo } from '../src/lib/getInfo'
-import { getSkills } from '../src/lib/getSkills'
 
-export default function Home({
-	info,
-	...props
-}: Awaited<ReturnType<typeof getExperience>> &
-	Awaited<ReturnType<typeof getSkills>> & {
-		info: Awaited<ReturnType<typeof getInfo>>
-	}) {
+export default function Home({ info }: { info: ProfileModel }) {
 	const [menuItem, toggle] = useToggle(['experience', 'skills', 'blog'])
 	const { width } = useViewportSize()
 
 	return (
-		<DataProvider
-			data={props}
-			filters={{
-				skill_type: [],
-				experience_category: [],
-				range: [null, null],
-				withLink: false
-			}}>
+		<DataProvider>
 			<div className={''}>
 				{info && <SideMenu {...info} />}
 				<div

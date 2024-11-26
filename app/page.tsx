@@ -1,6 +1,4 @@
-import { getExperience } from '../src/lib/getExperience'
-import { getInfo } from '../src/lib/getInfo'
-import { getSkills } from '../src/lib/getSkills'
+import { profileStore } from '@/src/firebase/models/profile'
 import Home from './_home'
 
 export default async function Page() {
@@ -9,14 +7,10 @@ export default async function Page() {
 }
 
 const getProps = async () => {
-	const [experience, skills, info] = await Promise.all([
-		getExperience(),
-		getSkills(),
-		getInfo()
-	])
+	const [info] = await profileStore.query({ where: [] })
 
 	return {
-		props: { ...experience, ...skills, info },
+		props: { info },
 		revalidate: 60
 	}
 }

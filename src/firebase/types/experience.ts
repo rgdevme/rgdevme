@@ -8,13 +8,11 @@ export type ExperienceDoc = {
 	project: string
 	role: string
 	description: string
-	completed?: true
-	contract?: string
-	country?: string
 	institution: string
 	client: string
 	skills: SkillRef[]
-	category?: string
+	type: string
+	format: string
 	links: { name: string; url: string }[]
 	images: { name: string; url: string }[]
 	start?: Timestamp
