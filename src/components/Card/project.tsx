@@ -1,12 +1,12 @@
 import { useData, useSetFilter } from '@/src/context/data'
 import { dateString } from '@/src/utils/date'
-import { MergedExperience } from '@/src/utils/experience'
 import { useElementSize, useHover, useToggle } from '@mantine/hooks'
 import { SkillCard } from './skill'
 import { IconExternalLink } from '@tabler/icons-react'
 import Link from 'next/link'
 import dayjs from 'dayjs'
 import Image from 'next/image'
+import { MergedExperience } from '@/src/lib/transformers/experience'
 
 export const ProjectCard = ({
 	project,
@@ -39,7 +39,7 @@ export const ProjectCard = ({
 								dayjs().endOf('month').toDate()
 							])
 						}>
-						{dateString(start)}
+						{/* {dateString(start)} */}
 					</span>
 					{' - '}
 					<span
@@ -50,7 +50,7 @@ export const ProjectCard = ({
 								dayjs().endOf('month').toDate()
 							])
 						}>
-						{dateString(end)}
+						{/* {dateString(end)} */}
 					</span>
 				</span>
 				{!!images[0]?.url && (
@@ -73,7 +73,7 @@ export const ProjectCard = ({
 						opacity: hovered ? 1 : 0,
 						transform: hovered ? 'translateY(0)' : 'translateY(-0.5rem)'
 					}}
-					className='skill-btn hidden md:inline cursor-pointer font-mono  text-xs text-zinc-500 hover:text-zinc-900 text-sm flex flex-1 items-end'
+					className='skill-btn md:inline cursor-pointer font-mono text-zinc-500 hover:text-zinc-900 text-sm flex flex-1 items-end'
 					onClick={() => toggleSkills()}>
 					Show skills +
 				</span>
@@ -86,7 +86,7 @@ export const ProjectCard = ({
 					))}
 				</div>
 
-				{!!links.length && (
+				{/* {links.length && (
 					<div className='links flex flex-row gap-2 mb-3'>
 						{links.map(link => (
 							<Link
@@ -99,7 +99,7 @@ export const ProjectCard = ({
 							</Link>
 						))}
 					</div>
-				)}
+				)} */}
 			</div>
 			<div
 				ref={sizeRef}
@@ -111,11 +111,11 @@ export const ProjectCard = ({
 					transitionProperty: 'opacity, margin'
 				}}
 				className={`hidden md:flex flex-[1_1_100%] relative select-none z-0 gap-x-4 flex-wrap font-mono text-xs font-normal text-zinc-500 opacity-1 gap-2 data-[show=true]:opacity-0`}>
-				{skills
+				{/* {skills
 					.map(skid => skillList.find(s => s.id === skid)!)
 					.map(skill => (
 						<SkillCard key={skill.id} {...skill} hide={true} />
-					))}
+					))} */}
 			</div>
 		</div>
 	)

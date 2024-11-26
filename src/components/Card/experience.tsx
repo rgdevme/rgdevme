@@ -1,17 +1,16 @@
 import { useData } from '@/src/context/data'
 import { dateString } from '@/src/utils/date'
-import { MergedExperience } from '@/src/utils/experience'
 import { ProjectCard } from './project'
+import { MergedExperience } from '@/src/lib/transformers/experience'
 
 export const ExperienceCard = ({
 	institution,
 	role,
 	start,
 	end,
-	projects,
-	country
+	projects
 }: MergedExperience) => {
-	const { experience_country } = useData()
+	const {} = useData()
 
 	return (
 		<div key={institution}>
@@ -24,13 +23,13 @@ export const ExperienceCard = ({
 					</span>
 				</div>
 				<span className='date text-zinc-500 font-mono text-xs font-medium'>
-					<span className='start'>{dateString(start)}</span>
+					{/* <span className='start'>{dateString(start)}</span> */}
 					{` - `}
-					<span className='end'>{dateString(end)}</span>
-					{` | `}
+					{/* <span className='end'>{dateString(end)}</span> */}
+					{/* {` | `}
 					{country && (
 						<span>{experience_country.find(z => z.id === country)!.name}</span>
-					)}
+					)} */}
 				</span>
 			</div>
 
