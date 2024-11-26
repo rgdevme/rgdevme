@@ -1,0 +1,1614 @@
+[
+  {
+    "name": "English",
+    "type": "Language",
+    "area": "Communication",
+    "tags": "Language",
+    "institution": "English first",
+    "level": 5,
+    "certifications": "",
+    "use_count": "",
+    "id": 82,
+    "experience": [
+      "33",
+      "9",
+      "17",
+      "7",
+      "50",
+      "44",
+      "43",
+      "27",
+      "40",
+      "10",
+      "53",
+      "12",
+      "60"
+    ]
+  },
+  {
+    "name": "Hungarian",
+    "type": "Language",
+    "area": "Communication",
+    "tags": "Language",
+    "institution": "Tutor",
+    "level": 0,
+    "certifications": "",
+    "use_count": "",
+    "id": 56,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "Spanish",
+    "type": "Language",
+    "area": "Communication",
+    "tags": "Language",
+    "institution": "Native",
+    "level": 6,
+    "certifications": "",
+    "use_count": "",
+    "id": 4,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "Communication",
+    "type": "Soft skill",
+    "area": "Communication",
+    "tags": "Global, Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 73,
+    "experience": [
+      "41",
+      "33",
+      "9",
+      "17",
+      "7",
+      "44",
+      "43",
+      "28",
+      "18",
+      "32",
+      "59",
+      "60"
+    ]
+  },
+  {
+    "name": "Accountability",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Global, Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 77,
+    "experience": [
+      "41",
+      "33",
+      "44",
+      "18"
+    ]
+  },
+  {
+    "name": "Agile Framework",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 18,
+    "experience": [
+      "46",
+      "28",
+      "10",
+      "59"
+    ]
+  },
+  {
+    "name": "Creativity and Adaptability",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Global, Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 64,
+    "experience": [
+      "41",
+      "33",
+      "24",
+      "9",
+      "17",
+      "7",
+      "50",
+      "44",
+      "43",
+      "27",
+      "28",
+      "18",
+      "40",
+      "10",
+      "32",
+      "45",
+      "53",
+      "12",
+      "59",
+      "60"
+    ]
+  },
+  {
+    "name": "Detail oriented",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Branding, Design, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 16,
+    "experience": [
+      "30",
+      "9",
+      "17",
+      "3",
+      "58",
+      "7",
+      "43",
+      "28",
+      "13",
+      "31",
+      "38",
+      "5",
+      "40",
+      "21",
+      "55",
+      "10",
+      "4",
+      "32",
+      "45",
+      "42",
+      "12",
+      "59",
+      "60"
+    ]
+  },
+  {
+    "name": "Ownership",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Global",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 10,
+    "experience": [
+      "41",
+      "52",
+      "33",
+      "24",
+      "2",
+      "30",
+      "17",
+      "3",
+      "7",
+      "50",
+      "44",
+      "43",
+      "19",
+      "49",
+      "28",
+      "13",
+      "18",
+      "14",
+      "47",
+      "38",
+      "40",
+      "55",
+      "10",
+      "4",
+      "32",
+      "45",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Problem-Solving / Critical Thinking",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Global, Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 23,
+    "experience": [
+      "41",
+      "33",
+      "24",
+      "9",
+      "17",
+      "7",
+      "50",
+      "44",
+      "43",
+      "27",
+      "28",
+      "13",
+      "18",
+      "40",
+      "16",
+      "10",
+      "32",
+      "53",
+      "12",
+      "59",
+      "60"
+    ]
+  },
+  {
+    "name": "Teamwork",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Global, Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 31,
+    "experience": [
+      "41",
+      "52",
+      "33",
+      "24",
+      "2",
+      "30",
+      "17",
+      "3",
+      "7",
+      "44",
+      "19",
+      "28",
+      "13",
+      "18",
+      "14",
+      "38",
+      "40",
+      "55",
+      "4",
+      "32",
+      "45",
+      "59"
+    ]
+  },
+  {
+    "name": "Time Management",
+    "type": "Soft skill",
+    "area": "Organization",
+    "tags": "Global, Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 51,
+    "experience": [
+      "33",
+      "9",
+      "17",
+      "7",
+      "50",
+      "44",
+      "43",
+      "27",
+      "28",
+      "10",
+      "32",
+      "53",
+      "59",
+      "60"
+    ]
+  },
+  {
+    "name": "Adobe Illustrator",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Branding, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 9,
+    "experience": [
+      "52",
+      "23",
+      "30",
+      "26",
+      "48",
+      "39",
+      "25",
+      "8",
+      "36",
+      "49",
+      "13",
+      "31",
+      "47",
+      "37",
+      "20",
+      "6",
+      "55"
+    ]
+  },
+  {
+    "name": "Adobe InDesign",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Editorial",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 46,
+    "experience": [
+      "26"
+    ]
+  },
+  {
+    "name": "Adobe Photoshop",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Advertising, Editorial",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 32,
+    "experience": [
+      "52",
+      "23",
+      "26",
+      "48",
+      "58",
+      "39",
+      "25",
+      "36",
+      "49",
+      "13",
+      "31",
+      "37",
+      "20",
+      "6",
+      "42"
+    ]
+  },
+  {
+    "name": "AWS",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Back-end, CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 61,
+    "experience": [
+      "28",
+      "4",
+      "59"
+    ]
+  },
+  {
+    "name": "CircleCI",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 15,
+    "experience": [
+      "28",
+      "59"
+    ]
+  },
+  {
+    "name": "Clockify",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 85,
+    "experience": [
+      "24"
+    ]
+  },
+  {
+    "name": "DataDog",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 37,
+    "experience": [
+      "28",
+      "59"
+    ]
+  },
+  {
+    "name": "Docker",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Back-end, CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 67,
+    "experience": [
+      "28",
+      "59"
+    ]
+  },
+  {
+    "name": "Figma",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Advertising, Branding, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 76,
+    "experience": [
+      "24",
+      "38",
+      "5",
+      "21",
+      "32"
+    ]
+  },
+  {
+    "name": "Git",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "CI/CD, Global",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 6,
+    "experience": [
+      "24",
+      "2",
+      "9",
+      "17",
+      "7",
+      "50",
+      "44",
+      "43",
+      "19",
+      "28",
+      "13",
+      "14",
+      "10",
+      "53",
+      "12",
+      "59",
+      "60"
+    ]
+  },
+  {
+    "name": "Google Analytics",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Advertising",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 78,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "Google Cloud Platform",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Advertising, Back-end, CI/CD, Global, Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 11,
+    "experience": [
+      "7"
+    ]
+  },
+  {
+    "name": "Google Tag Manager",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Advertising, Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 50,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "InVision",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Branding, Design, Front-end, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 26,
+    "experience": [
+      "8"
+    ]
+  },
+  {
+    "name": "Notion",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Back-end, Management, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 39,
+    "experience": [
+      "24"
+    ]
+  },
+  {
+    "name": "Pulumi",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 81,
+    "experience": [
+      "28",
+      "59"
+    ]
+  },
+  {
+    "name": "Slack",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 22,
+    "experience": [
+      "24"
+    ]
+  },
+  {
+    "name": "Trello",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 59,
+    "experience": [
+      "49"
+    ]
+  },
+  {
+    "name": "Vercel",
+    "type": "Hard skill",
+    "area": "Platforms",
+    "tags": "Back-end, CI/CD, Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 80,
+    "experience": [
+      "28",
+      "59"
+    ]
+  },
+  {
+    "name": "Advanced Custom Fields",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 52,
+    "experience": [
+      "9",
+      "7",
+      "43",
+      "60"
+    ]
+  },
+  {
+    "name": "AntDesign",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 62,
+    "experience": [
+      "28",
+      "4",
+      "32",
+      "45",
+      "59"
+    ]
+  },
+  {
+    "name": "CSS",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 27,
+    "experience": [
+      "29",
+      "24",
+      "2",
+      "9",
+      "26",
+      "3",
+      "58",
+      "19",
+      "13",
+      "14",
+      "38",
+      "5",
+      "21",
+      "42",
+      "60"
+    ]
+  },
+  {
+    "name": "Custom Blocks",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 20,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "Custom plugins",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 49,
+    "experience": [
+      "24",
+      "2",
+      "9",
+      "17",
+      "7",
+      "43",
+      "19",
+      "14",
+      "12",
+      "60"
+    ]
+  },
+  {
+    "name": "Custom Post Types",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 21,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "Custom themes",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 47,
+    "experience": [
+      "24",
+      "2",
+      "17",
+      "7",
+      "19",
+      "14"
+    ]
+  },
+  {
+    "name": "Database Administration",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 36,
+    "experience": [
+      "50",
+      "28",
+      "10",
+      "32",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Electron.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 17,
+    "experience": [
+      "53"
+    ]
+  },
+  {
+    "name": "Elementor",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 43,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "EmotionCSS",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 14,
+    "experience": [
+      "50",
+      "28",
+      "45",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Express.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 74,
+    "experience": [
+      "53"
+    ]
+  },
+  {
+    "name": "Firebase",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 53,
+    "experience": [
+      "50",
+      "10",
+      "53"
+    ]
+  },
+  {
+    "name": "Google API",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Global",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 25,
+    "experience": [
+      "7"
+    ]
+  },
+  {
+    "name": "Google Tag Manager Templates",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Advertising, Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 60,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "HTML",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 84,
+    "experience": [
+      "29",
+      "24",
+      "2",
+      "9",
+      "17",
+      "26",
+      "3",
+      "58",
+      "7",
+      "19",
+      "13",
+      "14",
+      "38",
+      "5",
+      "21",
+      "42",
+      "60"
+    ]
+  },
+  {
+    "name": "HubL (Hubspot templates)",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 13,
+    "experience": [
+      "3"
+    ]
+  },
+  {
+    "name": "Hubspot API",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 5,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "JavaScript",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 45,
+    "experience": [
+      "29",
+      "24",
+      "2",
+      "26",
+      "3",
+      "58",
+      "19",
+      "14",
+      "38",
+      "5",
+      "21",
+      "10",
+      "42"
+    ]
+  },
+  {
+    "name": "Liquid (Shopify templates)",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 3,
+    "experience": [
+      "5",
+      "21"
+    ]
+  },
+  {
+    "name": "Mantine.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 35,
+    "experience": [
+      "50",
+      "53"
+    ]
+  },
+  {
+    "name": "Next.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 54,
+    "experience": [
+      "28",
+      "38",
+      "32",
+      "45",
+      "59"
+    ]
+  },
+  {
+    "name": "Node.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Global",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 55,
+    "experience": [
+      "53"
+    ]
+  },
+  {
+    "name": "Parcel.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 65,
+    "experience": [
+      "10",
+      "53"
+    ]
+  },
+  {
+    "name": "PHP",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 30,
+    "experience": [
+      "29",
+      "24",
+      "2",
+      "9",
+      "17",
+      "58",
+      "7",
+      "43",
+      "19",
+      "14",
+      "42",
+      "12",
+      "60"
+    ]
+  },
+  {
+    "name": "PostgreSQL",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 79,
+    "experience": [
+      "28",
+      "4",
+      "32",
+      "59"
+    ]
+  },
+  {
+    "name": "React Native",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "Udemy",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 19,
+    "experience": [
+      "32"
+    ]
+  },
+  {
+    "name": "React Router",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 83,
+    "experience": [
+      "50",
+      "53"
+    ]
+  },
+  {
+    "name": "React.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 24,
+    "experience": [
+      "50",
+      "28",
+      "38",
+      "4",
+      "32",
+      "45",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "REST",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 57,
+    "experience": [
+      "9",
+      "17",
+      "7",
+      "43",
+      "53",
+      "60"
+    ]
+  },
+  {
+    "name": "Rollup.js",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 71,
+    "experience": [
+      "17",
+      "7"
+    ]
+  },
+  {
+    "name": "Sass",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 34,
+    "experience": [
+      "17",
+      "7"
+    ]
+  },
+  {
+    "name": "Sequelize",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 28,
+    "experience": [
+      "28",
+      "4",
+      "32",
+      "59"
+    ]
+  },
+  {
+    "name": "Tailwind",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Front-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 72,
+    "experience": [
+      "50",
+      "28",
+      "45",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Toolset",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Management, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 58,
+    "experience": [
+      "2",
+      "19",
+      "14"
+    ]
+  },
+  {
+    "name": "TypeScript",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, CI/CD, Front-end, Global",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 68,
+    "experience": [
+      "17",
+      "7",
+      "50",
+      "44",
+      "28",
+      "10",
+      "32",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Vite",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 42,
+    "experience": [
+      "17",
+      "7",
+      "50"
+    ]
+  },
+  {
+    "name": "W3 Total Cache",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 29,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "Webpack",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, CI/CD",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 48,
+    "experience": [
+      "28",
+      "59"
+    ]
+  },
+  {
+    "name": "WooCommerce",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Management, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 75,
+    "experience": [
+      "2",
+      "19",
+      "14"
+    ]
+  },
+  {
+    "name": "WordPress",
+    "type": "Hard skill",
+    "area": "Programming",
+    "tags": "Back-end, Front-end, Management, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 69,
+    "experience": [
+      "24",
+      "2",
+      "9",
+      "17",
+      "58",
+      "7",
+      "43",
+      "19",
+      "14",
+      "42",
+      "12",
+      "60"
+    ]
+  },
+  {
+    "name": "Composer",
+    "type": "Hard skill",
+    "area": "Wordpress",
+    "tags": "Back-end, CI/CD, Wordpress",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 1,
+    "experience": [
+      "7",
+      "43"
+    ]
+  },
+  {
+    "name": "Administration",
+    "type": "Hard skill",
+    "area": "Organization",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 66,
+    "experience": [
+      "33",
+      "26",
+      "44"
+    ]
+  },
+  {
+    "name": "Data Modeling",
+    "type": "Hard skill",
+    "area": "Organization",
+    "tags": "Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 2,
+    "experience": [
+      "9",
+      "17",
+      "7",
+      "50",
+      "43",
+      "27",
+      "28",
+      "10",
+      "4",
+      "32",
+      "53",
+      "12",
+      "59",
+      "60"
+    ]
+  },
+  {
+    "name": "Database Design and Architecture",
+    "type": "Hard skill",
+    "area": "Organization",
+    "tags": "Back-end",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 12,
+    "experience": [
+      "50",
+      "28",
+      "4",
+      "32",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Project Management",
+    "type": "Hard skill",
+    "area": "Organization",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 63,
+    "experience": [
+      "41",
+      "33",
+      "34",
+      "26",
+      "46",
+      "50",
+      "44",
+      "27",
+      "28",
+      "18",
+      "56",
+      "38",
+      "10",
+      "4",
+      "32",
+      "45",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Scrum master",
+    "type": "Hard skill",
+    "area": "Organization",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 33,
+    "experience": [
+      "33",
+      "46",
+      "50",
+      "27",
+      "28",
+      "10",
+      "32",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Adobe",
+    "type": "Hard skill",
+    "area": "Design",
+    "tags": "Branding, Design, Editorial, Marketing, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 7,
+    "experience": [
+      ""
+    ]
+  },
+  {
+    "name": "Branding",
+    "type": "Hard skill",
+    "area": "Design",
+    "tags": "Management",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 40,
+    "experience": [
+      "25",
+      "49",
+      "13",
+      "47",
+      "37",
+      "55"
+    ]
+  },
+  {
+    "name": "Email templates",
+    "type": "Hard skill",
+    "area": "Design",
+    "tags": "Branding, Front-end, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 70,
+    "experience": [
+      "23",
+      "13",
+      "47",
+      "55"
+    ]
+  },
+  {
+    "name": "Packaging",
+    "type": "Hard skill",
+    "area": "Design",
+    "tags": "Advertising, Branding, Design, Marketing",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 8,
+    "experience": [
+      "37"
+    ]
+  },
+  {
+    "name": "UI/UX",
+    "type": "Hard skill",
+    "area": "Design",
+    "tags": "Design, Marketing, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 38,
+    "experience": [
+      "30",
+      "17",
+      "7",
+      "50",
+      "28",
+      "32",
+      "53",
+      "59"
+    ]
+  },
+  {
+    "name": "Conversion Rate Optimization",
+    "type": "Hard skill",
+    "area": "Marketing",
+    "tags": "Front-end, Management, UX/UI",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 41,
+    "experience": [
+      "34",
+      "38",
+      "40",
+      "55",
+      "32"
+    ]
+  },
+  {
+    "name": "Social media",
+    "type": "Hard skill",
+    "area": "Marketing",
+    "tags": "Advertising, Branding, Design, Marketing",
+    "institution": "",
+    "level": "",
+    "certifications": "",
+    "use_count": "",
+    "id": 44,
+    "experience": [
+      "23",
+      "39",
+      "49",
+      "13",
+      "31",
+      "55"
+    ]
+  }
+]
