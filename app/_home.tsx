@@ -31,7 +31,7 @@ export default function Home({
 				withLink: false
 			}}>
 			<div className={''}>
-				<SideMenu {...info} />
+				{info && <SideMenu {...info} />}
 				<div
 					className='p-6'
 					style={{
