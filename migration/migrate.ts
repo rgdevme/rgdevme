@@ -31,6 +31,7 @@ const transformExperience = (data: typeof experience) =>
 			.toString()
 			.split(',')
 			.map(s => s.trim()),
+		links: x.links.split(',').map(s => s.trim()),
 		start: x.start.length > 0 ? new Date(x.start) : null,
 		end: x.end.length > 0 ? new Date(x.end) : null
 	}))
