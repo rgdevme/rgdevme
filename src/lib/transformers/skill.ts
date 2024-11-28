@@ -18,7 +18,7 @@ export const extractSkillData = (results: SkillModel[]) => {
 
 	const [tags, type] = results.reduce(
 		(acc, curr) => {
-			;(curr.tags as unknown as string).split(',')?.forEach(t => acc[0].add(t))
+			curr.tags.forEach(t => acc[0].add(t))
 			if (curr.type) acc[1].add(curr.type)
 			return acc
 		},

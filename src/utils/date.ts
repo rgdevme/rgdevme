@@ -1,8 +1,7 @@
-import dayjs from 'dayjs'
+import dayjs, { Dayjs } from 'dayjs'
 
-export const dateString = (date: string | null) => {
+export const dateString = (date?: Dayjs) => {
 	if (date === null) return 'Now'
-	const d = dayjs(date)
-	if (!d.isValid()) return null
-	return d.format('MMM. YY').toString()
+	if (!date?.isValid()) return null
+	return date.format('MMM. YY').toString()
 }

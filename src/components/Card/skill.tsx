@@ -1,18 +1,28 @@
-import { useFilter, useSetFilter } from '@/src/context/data'
-import { Skill } from '@/src/lib/getSkills'
+import { useFilter } from '@/src/context/data'
+import { SkillModel } from '@/src/firebase/types/skill'
 
-export const SkillCard = ({ id, name, hide }: Skill & { hide: boolean }) => {
-	const set = useSetFilter()
-	const { skill_type } = useFilter()
-
-	const isActive = skill_type.includes(id)
+export const SkillCard = ({
+	id,
+	name,
+	hide
+}: SkillModel & { hide: boolean }) => {
+	const {
+		filters: { skill },
+		filterSkill
+	} = useFilter()
 
 	return (
 		<span
-			data-active={isActive}
+			data-active={skill.includes(id)}
 			data-hide={hide}
 			className={`cursor-pointer hover:text-zinc-900 data-[active=true]:text-zinc-900 data-[active=true]:font-bold data-[hide=true]:opacity-1`}
-			onClick={() => set('skill_type', id)}>
+			onClick={() => {
+				const upd = [...skill]
+				const index = skill.indexOf(id)
+				if (index >= 0) upd.splice(index, 1)
+				else upd.push(id)
+				filterSkill(upd)
+			}}>
 			{name}
 		</span>
 	)

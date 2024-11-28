@@ -23,7 +23,7 @@ export const skillStore = fireborm.initializeStore<
 		const docData = doc.data()
 		const model = {
 			...docData,
-			use_count: docData.certifications.length,
+			use_count: docData.experience.length,
 			id,
 			_ref: ref as SkillRef
 		}
