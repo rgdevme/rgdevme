@@ -1,16 +1,18 @@
-import { useFilter, useSetFilter } from '@/src/context/data'
-import { DatePickerInput, MonthPickerInput } from '@mantine/dates'
+import { useFilter } from '@/src/context/data'
+import { MonthPickerInput } from '@mantine/dates'
 
 export const DateFilter = () => {
-	const { range } = useFilter()
-	const set = useSetFilter()
+	const {
+		filters: { range },
+		filterRange
+	} = useFilter()
 
 	return (
 		<MonthPickerInput
 			type='range'
 			placeholder='Pick a date range'
 			value={range}
-			onChange={val => set('range', val)}
+			onChange={filterRange}
 			radius='xl'
 			valueFormat='MMM. YY'
 			clearable

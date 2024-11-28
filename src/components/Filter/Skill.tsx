@@ -1,19 +1,32 @@
-import { useData, useFilter, useSetFilter } from '@/src/context/data'
+import { useData, useFilter } from '@/src/context/data'
 import { MultiSelect } from '@mantine/core'
 
 export const SkillsFilter = () => {
 	const {
 		skills,
+		experience
 		//skill_tags,
-		skill_type
+		// skill_type
 	} = useData()
-	const filter = useFilter()
-	const set = useSetFilter()
+	const {
+		filters: { skill },
+		filterSkill
+	} = useFilter()
 
 	const skillList = skills
-		.filter(x => x.use_count > 0)
-		.map(s => ({ label: `${s.name}`, value: s.id }))
+		.filter(s => s.use_count > 0)
+		.filter(s =>
+			experience.some(x =>
+				x.projects
+					.map(p => p.skills.map(ps => ps.id))
+					.flat()
+					.includes(s.id)
+			)
+		)
+		.map(s => ({ label: `${s.name} [${s.use_count}]`, value: s.id }))
 		.sort((a, b) => a.label.localeCompare(b.label))
+
+	console.log(skills)
 
 	return (
 		<div className='flex flex-row gap-2 flex-1'>
@@ -29,40 +42,14 @@ export const SkillsFilter = () => {
 					dropdown: { borderRadius: '1rem' }
 				}}
 				className='drop-shadow-md'
-				onChange={val => set('skill_type', val)}
-				value={filter.skill_type}
+				onChange={filterSkill}
+				value={skill}
 				placeholder='Looking for a particular skill?'
 				data={skillList}
 				searchable
 				hidePickedOptions
 				clearable
 			/>
-
-			{/* {skill_type.map((t, i) => {
-				const list = skills
-					.filter(x => x.use_count > 0 && x.type === t.id)
-					.map(s => ({ label: `${s.name}`, value: s.id }))
-					.sort((a, b) => a.label.localeCompare(b.label))
-
-				return list.length <= 1 ? null : (
-					<MultiSelect
-						key={t.id}
-						radius={'xl'}
-						styles={{
-							root: { width: '25%', minWidth: 'unset', flex: '1 1 0' },
-							input: { minWidth: 'unset' },
-							inputField: { minWidth: 'unset' }
-						}}
-						onChange={val => set('skill_type', val)}
-						value={filter.skill_type.filter(x =>
-							list.map(i => i.value).includes(x)
-						)}
-						placeholder={t.name}
-						data={list}
-						searchable
-					/>
-				)
-			})} */}
 		</div>
 	)
 }

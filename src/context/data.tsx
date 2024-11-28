@@ -1,18 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-children-prop */
+import dayjs from 'dayjs'
 import {
 	createContext,
 	PropsWithChildren,
 	useContext,
 	useEffect,
+	useMemo,
 	useState
 } from 'react'
 import { experienceStore } from '../firebase/models/experience'
+import { skillStore } from '../firebase/models/skill'
 import { SkillModel } from '../firebase/types/skill'
 import {
 	extractExperienceData,
 	MergedExperience
 } from '../lib/transformers/experience'
-import { skillStore } from '../firebase/models/skill'
 import { extractSkillData } from '../lib/transformers/skill'
 
 type Data = {
@@ -25,15 +28,18 @@ type Data = {
 		experience_contract: string[]
 	}
 	filters: {
-		skill_type: string[]
-		experience_category: string[]
+		skill: string[]
+		type: string[]
 		range: [Date | null, Date | null]
 		withLink: boolean
 	}
 }
 
 type Methods = {
-	setFilter: (prop: keyof Data['filters'], val: any) => void
+	filterLink: (value: boolean) => void
+	filterRange: (range: [Date | null, Date | null]) => void
+	filterSkill: (skill: string[]) => void
+	filterType: (type: string[]) => void
 }
 
 const initialCtx: Data = {
@@ -46,54 +52,98 @@ const initialCtx: Data = {
 		experience_contract: []
 	},
 	filters: {
-		skill_type: [],
-		experience_category: [],
+		skill: [],
+		type: [],
 		range: [null, null],
 		withLink: false
 	}
 }
 
 const DataCtx = createContext<Data & Methods>({
-	...initialCtx,
-	setFilter: () => {}
-})
+	...initialCtx
+} as Data & Methods)
 
 export const DataProvider = ({ children }: PropsWithChildren) => {
+	const [experience, setExperience] = useState<MergedExperience[]>([])
+	const [skills, setSkills] = useState<SkillModel[]>([])
+	// const [state, setState] = useState(initialCtx)
 	const [state, setState] = useState(initialCtx)
 
-	const setFilter: Methods['setFilter'] = (prop, val) => {
+	const filteredExperiences = useMemo(
+		() =>
+			experience.reduce((acc, curr) => {
+				const upd = { ...curr }
+				const projects = [
+					...upd.projects.filter(y => {
+						const isCategory =
+							!state.filters.type.length || state.filters.type.includes(y.type)
+
+						const hasSkill =
+							!state.filters.skill.length ||
+							state.filters.skill.every(z => y.skills?.some(s => s.id === z))
+
+						const [start, end] = state.filters.range
+						const inDateRange =
+							(!start ? true : !dayjs(start).isAfter(y.start)) &&
+							(!end ? true : !dayjs(end).isBefore(y.end))
+
+						const hasLinks = !state.filters.withLink || !!y.links.length
+
+						return isCategory && hasLinks && inDateRange && hasSkill
+					})
+				]
+
+				upd.projects = projects
+				if (projects.length !== 0) acc.push(upd)
+				return acc
+			}, [] as MergedExperience[]),
+		[Object.values(state.filters)]
+	)
+
+	const filterRange = (range: [Date | null, Date | null]) => {
 		setState(p => {
-			const upd = { ...p }
-
-			switch (prop) {
-				case 'withLink':
-				case 'range':
-					upd.filters[prop] = val
-					break
-				case 'experience_category':
-				case 'skill_type':
-					if (typeof val === 'string' && upd.filters[prop].includes(val)) {
-						upd.filters[prop] = [...upd.filters[prop].filter(x => x !== val)]
-					} else {
-						upd.filters[prop] = [...upd.filters[prop], val]
-					}
-					break
-
-				default:
-					break
-			}
-
-			return upd
+			p.filters.range = range
+			return { ...p }
 		})
+	}
+
+	const filterLink = (value: boolean) => {
+		setState(p => {
+			p.filters.withLink = value
+			return { ...p }
+		})
+	}
+
+	const filterSkill = (skill: string[]) => {
+		setState(p => {
+			p.filters.skill = skill
+			return { ...p }
+		})
+	}
+
+	const filterType = (type: string[]) => {
+		setState(p => {
+			p.filters.type = type
+			return { ...p }
+		})
+	}
+
+	const methods = {
+		filterLink,
+		filterRange,
+		filterSkill,
+		filterType
 	}
 
 	const getContextData = async () => {
 		const expdata = await experienceStore.query({ where: [] })
-		const exp = extractExperienceData(expdata)
-
 		const skilldata = await skillStore.query({ where: [] })
+
+		const exp = extractExperienceData(expdata)
 		const skill = extractSkillData(skilldata)
 
+		setExperience(exp.experience)
+		setSkills(skill.skills)
 		setState(p => {
 			p.data = { ...exp, ...skill }
 			return p
@@ -109,10 +159,19 @@ export const DataProvider = ({ children }: PropsWithChildren) => {
 	}, [state])
 
 	return (
-		<DataCtx.Provider value={{ ...state, setFilter }} children={children} />
+		<DataCtx.Provider
+			value={{
+				data: { ...state.data, experience: filteredExperiences, skills },
+				filters: state.filters,
+				...methods
+			}}
+			children={children}
+		/>
 	)
 }
 
 export const useData = () => useContext(DataCtx).data
-export const useFilter = () => useContext(DataCtx).filters
-export const useSetFilter = () => useContext(DataCtx).setFilter
+export const useFilter = () => {
+	const { filters, data, ...methods } = useContext(DataCtx)
+	return { filters, ...methods }
+}

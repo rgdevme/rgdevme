@@ -1,10 +1,11 @@
-import { useFilter, useSetFilter } from '@/src/context/data'
-import { Checkbox, getThemeColor } from '@mantine/core'
-import theme from 'tailwindcss/defaultTheme'
+import { useFilter } from '@/src/context/data'
+import { Checkbox } from '@mantine/core'
 
 export const WithLink = () => {
-	const { withLink } = useFilter()
-	const set = useSetFilter()
+	const {
+		filters: { withLink },
+		filterLink
+	} = useFilter()
 
 	return (
 		<Checkbox
@@ -16,7 +17,7 @@ export const WithLink = () => {
 				label: { color: 'slategray' }
 			}}
 			defaultChecked={withLink}
-			onChange={e => set('withLink', e.target.checked)}
+			onChange={e => filterLink(e.target.checked)}
 		/>
 	)
 }
