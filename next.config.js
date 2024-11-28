@@ -9,6 +9,7 @@ module.exports = {
 	// 	// a non-locale prefixed path e.g. `/hello`
 	// 	defaultLocale: 'en'
 	// },
+	reactStrictMode: true,
 	images: {
 		unoptimized: true,
 		remotePatterns: [
