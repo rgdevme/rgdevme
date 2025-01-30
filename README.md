@@ -10,7 +10,11 @@ Let’s bring your digital vision to life!
 
 ## Want to know more about my skills?
 
-Take a look at this repo! It's my CV and playground 🔥
+![Top langs](https://github-readme-stats.vercel.app/api/top-langs/?username=rgdevme&exclude_repo=monkasite&hide=css,scss,sass&hide_border=true&layout=compact)
+
+Take a look at [my website's repo](https://github.com/rgdevme/rgdevme)! It's my CV and playground 🔥
+
+[![rgdevme repo](https://github-readme-stats.vercel.app/api/pin/?username=rgdevme&repo=rgdevme)](https://github.com/thepracticaldev/dev.to)
 
 Quick run down of it:
 
